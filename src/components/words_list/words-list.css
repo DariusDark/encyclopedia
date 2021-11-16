@@ -1,0 +1,10 @@
+.words-list__row {
+    display: flex;
+    /* align-items: stretch; */
+    flex-wrap: wrap;
+}
+
+
+.match-error {
+    margin: 0 auto;
+}

@@ -1,0 +1,30 @@
+.wrapper {
+    min-height: 100vh;
+    background-color: #181a1b;
+    background: url('./images/test2.png') center/cover no-repeat;
+    padding: 50px 20px;
+    position: relative;
+}
+.wrapper:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(16, 18, 22, 0.562);
+    backdrop-filter: blur(6px);
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.btn {
+    background: transparent;
+    color: #fff;
+}
