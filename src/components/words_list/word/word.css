@@ -20,13 +20,16 @@
     font-size: 22px;
     margin-bottom: 15px;
 }
-.word__subtitle {
+.word__title, .word__subtitle {
     overflow: hidden;
-    line-height: 16px;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
+}
+.word__subtitle {
+    line-height: 16px;
+    -webkit-line-clamp: 3;
     margin-bottom: auto;
 }
 

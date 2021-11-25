@@ -1,7 +1,7 @@
 .wrapper {
     min-height: 100vh;
     background-color: #181a1b;
-    background: url('./images/test2.png') center/cover no-repeat;
+    background: url('./images/test2.png') center/cover fixed no-repeat;
     padding: 50px 20px;
     position: relative;
 }
