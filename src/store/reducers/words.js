@@ -1,56 +1,53 @@
-import { SEARCH_WORD } from '../actions/words.js';
+import { INPUT_VALUE, SEARCH_WORDLIST, SET_FETCHING } from '../actions/words.js';
 
 const initialState = {
-    words: [{
-        id: 1,
-        title: 'Dinosaurus',
-        subtitle: 'Dinosaurus is the greatest animal of past world, that existed about 3 millions years ago.'
-    },
-    {
-        id: 2,
-        title: 'Dariusus',
-        subtitle: 'Dinosaur Dariusus is the most agressive with unstable mind, he can unexpectedly attack u and tear u appart, such animal existed 1000 eons ago'
-    },
-    {
-        id: 3,
-        title: 'Nozimusus',
-        subtitle: 'Nozimusus is the greatest animal of present world, that exist in 2021, Nozimusus is the dangerous hunter in the night, his cave is dark and filled with smell of blood.'
-    },
-    {
-        id: 4,
-        title: 'Marufusus',
-        subtitle: 'Marufusus is the Professional devil, he loves drom, kiss drom, prom drom, drom drom, dom dorom dororom, guy have no girlfriend 4 years.'
-    }],
-    searchResult: null
+    wordList: null,
+    searchValue: '',
+    isFetching: false
 }
 
 export const wordsReducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'ADD_WORDS':
-            return addWords(state, action.payload);
-        case SEARCH_WORD:
-            return findWord(state, action.payload);
+        case INPUT_VALUE: 
+            return inputValue(state, action.payload);
+        case SEARCH_WORDLIST:
+            return searchWordList(state, action.payload);
+        case SET_FETCHING:
+            return setFetching(state, action.payload);
         default:
             return state;
     }
 }
 
-const findWord = (state, value) => {
-    const { words } = state;
-    let searchResult = words.filter(item => item.title.includes(value));
-    if (value === '') {
-        return {
-            ...state,
-            searchResult: null
-        }
-    }
+const setFetching = (state, bool) => {
     return {
         ...state,
-        searchResult: [...searchResult]
-    };
+        isFetching: bool
+    }
 }
 
-const addWords = (state, words) => {
-    //There is anything that i can set in state by this function
-    return state
+const inputValue = (state, value) => {
+    return {
+        ...state,
+        searchValue: value
+    }
+};
+
+const searchWordList = (state, wordList) => {
+    console.log('Reducer', wordList.items);
+    let i = 1; //Temporary
+    const words = wordList.items.map(item => {
+        const newObj = {
+            id: i++,
+            title: item.heading,
+            subtitle: item.lingvoTranslations
+        };
+        return newObj;
+    });
+    console.log('words after map', words)
+    return {
+        ...state,
+        wordList: [...words],
+        isFetching: false
+    };
 }

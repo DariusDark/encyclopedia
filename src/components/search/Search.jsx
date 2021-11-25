@@ -1,12 +1,20 @@
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { findWord } from '../../store/actions/words.js';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { inputValue, setFetching } from '../../store/actions/words.js';
+import { fetchSearchWordList } from '../../axios/axios.js';
 
 import './search.css';
 
 function Search() {
     const dispatch = useDispatch();
-    const [searchValue, setSearchValue] = useState();
+    const searchValue = useSelector(state => {
+        return state.wordsReducer.searchValue;
+
+    })
+    useEffect(() => {
+        console.log('useEffect');
+    }, [])
+
 
     return (
         <div className="search">
@@ -14,7 +22,7 @@ function Search() {
             <form className="search__form"
                 onSubmit={(event) => {
                     event.preventDefault();
-                    dispatch(findWord(searchValue))
+                    console.log('submit');
                 }}>
                 <div className="search__row">
                     <div className="input__container">
@@ -23,9 +31,14 @@ function Search() {
                             required
                             type="text"
                             placeholder="Type Something here"
+                            value={searchValue}
                             onInput={(event) => {
-                                setSearchValue(event.target.value);
-                                dispatch(findWord(event.target.value))
+                                const value = event.target.value;
+                                dispatch(inputValue(value));
+                                if (value.length) {
+                                    dispatch(setFetching(true));
+                                    fetchSearchWordList(value, dispatch);
+                                }
                             }}
                         />
                         <span className="input-background"></span>
