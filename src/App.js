@@ -16,7 +16,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={WordsList} />
           <Route path={`/translate/:word`} component={Word} />
-          {/* <Redirect to="/" /> */}
+          <Redirect to="/" />
         </Switch>
       </div>
     </div>
