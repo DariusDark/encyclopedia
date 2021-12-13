@@ -28,7 +28,7 @@ export const fetchSearchExactWord = async (searchValue, dispatch) => {
 //         method: 'POST',
 //         mode: 'no-cors',
 //         headers: {
-//             'Authorization': 'Basic OGQzNjgwOTUtNmUzNi00MGQ5LWE3NDYtZTQ1YTI0NDk1M2YwOjYzYzM2MjQwMGI5NjRjNTlhNDBjMjM1NzFkMDRmMmE2'
+//
 //         }
 //     })
 //     let data = await auth.json();
