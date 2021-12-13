@@ -1,29 +1,36 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { inputValue, setFetching } from '../../store/actions/words.js';
+import { inputValue, setFetching, setActive } from '../../store/actions/words.js';
 import { fetchSearchWordList } from '../../axios/axios.js';
-
+import { useHistory } from 'react-router-dom';
 import './search.css';
+
+import WordsList from '../words_list/WordsList.jsx';
 
 function Search() {
     const dispatch = useDispatch();
+    const isActive = useSelector(state => state.wordsReducer.isActive);
     const searchValue = useSelector(state => {
         return state.wordsReducer.searchValue;
 
-    })
+    });
+    
+    const history = useHistory();
+
     useEffect(() => {
-        console.log('useEffect');
     }, [])
-
-
+    function redirect() {
+    }
     return (
         <div className="search">
             <h1 className="search__title">Encyclopedia of Dinosaurus</h1>
             <form className="search__form"
                 onSubmit={(event) => {
                     event.preventDefault();
-                    console.log('submit');
+                    history.push(`/translate/${searchValue}`);
+                    dispatch(setActive(false));
                 }}>
+                    {redirect()}
                 <div className="search__row">
                     <div className="input__container">
                         <input
@@ -48,6 +55,9 @@ function Search() {
                     </div>
                 </div>
             </form>
+            {
+                isActive ? < WordsList /> : null
+            }
         </div>
     )
 }

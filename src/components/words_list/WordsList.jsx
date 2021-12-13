@@ -18,7 +18,7 @@ function WordsList() {
                     <div className="loader"></div>
                 : words !== null ?
                         words.length ? words.map(item => <Word key={item.id} item={item} />) : <div className="match-error">No Matching Result</div>
-                        : <div style={{ margin: '0px auto' }}>HELLO</div>
+                        : null
                 }
             </div>
         </div>

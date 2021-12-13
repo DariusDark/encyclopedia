@@ -14,7 +14,6 @@ function App() {
       <div className="container">
         <Search />
         <Switch>
-          <Route exact path="/" component={WordsList} />
           <Route path={`/translate/:word`} component={Word} />
           <Redirect to="/" />
         </Switch>

@@ -1,6 +1,14 @@
 export const SEARCH_WORDLIST = 'SEARCH_WORDLIST';
 export const INPUT_VALUE = 'INPUT_VALUE';
 export const SET_FETCHING = 'SET_FETCHING';
+export const SET_ACTIVE = 'SET_ACTIVE';
+
+export const setActive = (bool) => {
+    return {
+        type: SET_ACTIVE,
+        payload: bool
+    }
+}
 
 export const setFetching = (bool) => {
     return {

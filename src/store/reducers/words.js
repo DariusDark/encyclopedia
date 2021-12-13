@@ -1,9 +1,10 @@
-import { INPUT_VALUE, SEARCH_WORDLIST, SET_FETCHING } from '../actions/words.js';
+import { INPUT_VALUE, SEARCH_WORDLIST, SET_FETCHING, SET_ACTIVE } from '../actions/words.js';
 
 const initialState = {
     wordList: null,
     searchValue: '',
-    isFetching: false
+    isFetching: false,
+    isActive: false
 }
 
 export const wordsReducer = (state = initialState, action) => {
@@ -14,8 +15,17 @@ export const wordsReducer = (state = initialState, action) => {
             return searchWordList(state, action.payload);
         case SET_FETCHING:
             return setFetching(state, action.payload);
+        case SET_ACTIVE: 
+            return setActive(state, action.payload);
         default:
             return state;
+    }
+}
+
+const setActive = (state, bool) => {
+    return {
+        ...state,
+        isActive: bool
     }
 }
 
@@ -29,7 +39,8 @@ const setFetching = (state, bool) => {
 const inputValue = (state, value) => {
     return {
         ...state,
-        searchValue: value
+        searchValue: value,
+        isActive: value ? true : false
     }
 };
 
@@ -44,10 +55,9 @@ const searchWordList = (state, wordList) => {
         };
         return newObj;
     });
-    console.log('words after map', words)
     return {
         ...state,
         wordList: [...words],
-        isFetching: false
+        isFetching: false,
     };
 }

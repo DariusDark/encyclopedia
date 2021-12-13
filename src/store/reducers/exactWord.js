@@ -16,9 +16,8 @@ export const exactWordReducer = (state = initialStage, action) => {
 }
 
 const addExactWord = (state, translations) => {
-    console.log(translations);
     return {
         ...state,
-        word: [...translations.lingvoArticles]
+        word: [...translations.lingvoArticles,]
     }
 }

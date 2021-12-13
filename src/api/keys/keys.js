@@ -1,0 +1,21 @@
+export const keys = {
+    'AmericanEnglish (En-Ru)': "Англо-русский словарь. (Американский вариант)",
+    beer_en_ru: "Пивоваренная промышленность",
+    'Biology (En-Ru)': "Биологический словарь",
+    difficulties_en_ru: "Трудности английского языка.",
+    'Engineering (En-Ru)': "Машиностроение и автоматизация производства",
+    essential_en_ru: "Общая лексика (краткий)",
+    forum_dictionary_en_ru: "Народный словарь",
+    geography_en_ru: "Географические названия",
+    'Law (En-Ru)': "Юридический словарь",
+    'LingvoComputer (En-Ru)': "Вычислительная техника и программирование",
+    'LingvoGrammar (En-Ru)': "Грамматический словарь",
+    'LingvoUniversal (En-Ru)': "Общая лексика",
+    'MechanicalEngineering (En-Ru)': "Машиностроение и автоматизация производства",
+    'MenuTranslate (En-Ru)': "Ресторанная лексика (Menu Translate)",
+    'Physics (En-Ru)': "Физический словарь",
+    proverbs_en_ru: "Пословицы и поговорки и их русские соответствия",
+    'Psychology (En-Ru)': "Психология",
+    'Telecoms (En-Ru)': "Телекоммуникации",
+    menureader_en_ru: "Ресторанная лексика"
+}
