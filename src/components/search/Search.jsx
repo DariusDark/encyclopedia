@@ -28,6 +28,7 @@ function Search() {
                 onSubmit={(event) => {
                     event.preventDefault();
                     history.push(`/translate/${searchValue}`);
+                    // dispatch(inputValue(history));
                     dispatch(setActive(false));
                 }}>
                     {redirect()}

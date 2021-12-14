@@ -1,8 +1,11 @@
 .word {
-    --lightC: rgb(202, 202, 202);
+    --marginB: 12px;
+    --lightC: rgb(213, 213, 213);
+    --greyC: rgb(189, 189, 189);
+    font-size: 16px;
+    margin-bottom: 20px;
 }
 .word__headline {
-    font-size: 16px;
     margin-bottom: 10px;
     color: var(--lightC);
 }
@@ -11,4 +14,26 @@
     font-size: 20px;
     line-height: 26px;
     margin-bottom: 15px;
-}  
+}
+.word__paragraph {
+    margin-bottom: var(--marginB);
+}
+.word__paragraph--margin-0 {
+    margin: 0;
+}
+
+.word__list {
+    padding-top: 12px;
+    padding-left: 10px;
+}
+.word__list-item {
+    margin-bottom: 12px;
+}
+
+.word__transcription {
+    color: #1d9bf5;
+}
+
+.word__text--grey {
+    color: var(--greyC);
+}

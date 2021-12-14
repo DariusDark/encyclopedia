@@ -1,32 +1,32 @@
-.word__link {
+.word-suggestion__link {
     display: block;
     color: #fff;
     border-bottom: 1px solid rgba(245, 245, 245, 0.329);
     transition: background 0.1s ease;
 }
-.word__link:hover {
+.word-suggestion__link:hover {
     background: rgba(255, 255, 255, 0.2);
 }
-.word__link:last-child {
+.word-suggestion__link:last-child {
     border-bottom: 0;
 }
-.word__container {
+.word-suggestion__container {
 }
 
-.word__body {
+.word-suggestion__body {
     display: flex;
     padding: 10px 10px;
 }
 
-.word__dash {
+.word-suggestion__dash {
     margin: 0px 10px;
 }
 
-.word__subtitle::first-letter {
+.word-suggestion__subtitle::first-letter {
     text-transform: uppercase;
 }
 
-.word__title, .word__subtitle {
+.word-suggestion__title, .word-suggestion__subtitle {
     overflow: hidden;
 	text-overflow: ellipsis;
 	display: -webkit-box;
