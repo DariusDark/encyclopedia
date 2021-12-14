@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+
+import './translation.css';
 
 import { keys } from '../../../api/keys/keys';
 import { distributor } from '../../../api/nodes/nodes';
