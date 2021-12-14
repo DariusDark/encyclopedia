@@ -9,7 +9,6 @@ function WordsList() {
         return state.wordsReducer.wordList;
     });
 
-    console.log(isFetching);
 
     return (
         <div className="words-list">

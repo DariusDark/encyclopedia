@@ -8,8 +8,8 @@ function Word({ item: { title, subtitle } }) {
     const dispatch = useDispatch();
     return (
         <Link className="word-suggestion__link" to={`/translate/${title}`} onClick={() => {
-            dispatch(setActive(false));
             dispatch(inputValue(title));
+            dispatch(setActive(false));
         }}>
             <div className="word-suggestion__container">
                 <div className="word-suggestion__body">

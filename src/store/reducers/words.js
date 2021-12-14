@@ -45,7 +45,6 @@ const inputValue = (state, value) => {
 };
 
 const searchWordList = (state, wordList) => {
-    console.log('Reducer', wordList.items);
     let i = 1; //Temporary
     const words = wordList.items.map(item => {
         const newObj = {

@@ -14,7 +14,7 @@ function Word({ match: { params: { word } } }) {
     }, [word, dispatch])
 
     const translations = useSelector(state => state.exactWordReducer.word);
-    // console.log('HERE TRANSLATIONS', translations);
+
     return (
         <>
             {translations ? translations.map(item => <Translation key={keygenerator()} item={item} />) : null}
