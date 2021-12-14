@@ -11,7 +11,7 @@ const nodes = {
 
             const { node: nodeName } = markupArr[i];
             const { text } = markupArr[i];
-            console.log(markupArr[i]);
+            
             spanElems.push(this[nodeName](text, type !== 'listItem' ? type : null));
         };
         return <p className={`word__paragraph${rest.length && type === 'listItem' ? ' word__paragraph--margin-0' : ''}`}>{spanElems}</p>
@@ -46,13 +46,9 @@ const nodes = {
 
         for (let i = 0; i < markupArr.length; i++) {
             const { node: nodeName } = markupArr[i];
-            // try {
-                // console.log(markupArr[i]);
-                    liEls.push(this[nodeName](markupArr[i], nodeName === 'List' ? null : 'listItem'));
-                // console.log(nodeName);
-            // } catch (e) {
-            // console.log(e);
-            // }
+
+            liEls.push(this[nodeName](markupArr[i], nodeName === 'List' ? null : 'listItem'));
+
         }
         return <li className="word__list-item">{liEls}</li>;
     }, // <-Has children || markup
